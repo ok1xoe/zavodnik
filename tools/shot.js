@@ -1,0 +1,11 @@
+const H = require('/Users/hyman/EngetoAcademy/TizenOS/_kit/headless.js');
+const D = '/Users/hyman/EngetoAcademy/TizenOS/zavodnik/';
+const out = process.argv[2];
+const g = H.load([D + 'js/speccy.js', D + 'js/game.js']);
+g.step(30); g.png(out + '/title.png', 3);
+g.key(32, true); g.step(2); g.key(32, false);
+g.step(210);
+g.key(38, true);
+g.step(300);
+g.png(out + '/play.png', 3);
+console.log(g.sandbox.GAME.state, g.sandbox.GAME.speed, g.sandbox.GAME.pos);
